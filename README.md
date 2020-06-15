@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Weather App
+This is a practice project for Karl Chvojka
+
+## MVP
+- Display 5-day forecast
+- Each day shows:
+  - High and Low tempratures
+  - Image for sunny/rainy/cloudy/snowy.
+- Ability to click the day and see hourly forecast
+- Add React Router to the project, and allow each day to show hourly forecast for said day.
+- Data to come from the Open Weather Map for Data
+
+## Stretch Goals
+- Add graphics library to graph the temprature over the course of the week/day.
+
 ## Available Scripts
 
 In the project directory, you can run:
