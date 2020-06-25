@@ -15,8 +15,16 @@ This is a practice project for Karl Chvojka
 ## Stretch Goals
 - Add graphics library to graph the temprature over the course of the week/day.
 
-## Available Scripts
+## Installation Notes
+- For this app to work you will need to get an API key:
+1. create .env.development.local file within the root
+2. go to [OpenWeatherMap](https://openweathermap.org/api)
+3. Register for the site, get a free API key.
+4. Add the API key to your env file from step one like so:
+REACT_APP_API_KEY = "ae32b1dd0d37f338ad80d96564c24086"
+5. Run npm start
 
+## Available Scripts
 In the project directory, you can run:
 
 ### `npm start`
