@@ -17,6 +17,13 @@ const getPosition = (setUrl) => {
     setUrl(`http://api.openweathermap.org/data/2.5/onecall?lat=${pos[0]}&lon=${pos[1]}&units=metric&exclude=minutely&appid=1b6a6865f38ddcf18f28b82e13ba62d0`);
   });
 }
+
+const fetchWeather = async (setWeather, url) => {
+  const result = await axios(url);
+
+  // Set current User state
+  setWeather(result.data);
+};
 // fetchWeather fetches data from the API and saves it into state
 
 
@@ -27,16 +34,10 @@ function App() {
   getPosition(setUrl);
 
   useEffect(() => {
-    const fetchWeather = async () => {
-      const result = await axios(url);
-
-      // Set current User state
-      setWeather(result.data);
-    };
-
-    fetchWeather(url);
+    fetchWeather(setWeather, url);
   }, [url]);
 
+  console.log(weather)
   return (
     Object.keys(weather).length > 0 ?
     <div className="App">
