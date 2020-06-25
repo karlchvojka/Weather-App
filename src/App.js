@@ -8,31 +8,40 @@ import './Styles/fonts.scss';
 // Component Imports
 
 // Helper Functions
-
+const getPosition = (setUrl) => {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    const pos = [
+      position.coords.latitude,
+      position.coords.longitude
+    ]
+    setUrl(`http://api.openweathermap.org/data/2.5/onecall?lat=${pos[0]}&lon=${pos[1]}&units=metric&exclude=minutely&appid=1b6a6865f38ddcf18f28b82e13ba62d0`);
+  });
+}
 // fetchWeather fetches data from the API and saves it into state
-const fetchWeather = async (setWeather) => {
-  const result = await axios(
-    "http://api.openweathermap.org/data/2.5/onecall?lat=43.6532&lon=-79.3832&units=metric&exclude=minutely&appid=1b6a6865f38ddcf18f28b82e13ba62d0"
-  );
 
-  console.log('result', result)
-  // Set current User state
-  setWeather(result.data);
-};
 
 function App() {
+  const [url, setUrl] = useState('');
   const [weather, setWeather] = useState({});
 
-  useEffect(() => {
-    fetchWeather(setWeather);
-  }, []);
+  getPosition(setUrl);
 
-  console.log('weather', weather)
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const result = await axios(url);
+
+      // Set current User state
+      setWeather(result.data);
+    };
+
+    fetchWeather(url);
+  }, [url]);
+
   return (
     Object.keys(weather).length > 0 ?
     <div className="App">
       <h1>Weather App</h1>
-      <Moment unix>{weather.current.sunset}</Moment>
+
     </div>
     :
       <h2>Loading...</h2>
