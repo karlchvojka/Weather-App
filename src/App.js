@@ -14,7 +14,7 @@ const getPosition = (setUrl) => {
       position.coords.latitude,
       position.coords.longitude
     ]
-    setUrl(`http://api.openweathermap.org/data/2.5/onecall?lat=${pos[0]}&lon=${pos[1]}&units=metric&exclude=minutely&appid=1b6a6865f38ddcf18f28b82e13ba62d0`);
+    setUrl(`http://api.openweathermap.org/data/2.5/onecall?lat=${pos[0]}&lon=${pos[1]}&units=metric&exclude=minutely&appid=${process.env.REACT_APP_API_KEY}`);
   });
 }
 
