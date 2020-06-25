@@ -26,7 +26,6 @@ const fetchWeather = async (setWeather, url) => {
 };
 // fetchWeather fetches data from the API and saves it into state
 
-
 function App() {
   const [url, setUrl] = useState('');
   const [weather, setWeather] = useState({});
@@ -34,7 +33,10 @@ function App() {
   getPosition(setUrl);
 
   useEffect(() => {
-    fetchWeather(setWeather, url);
+    Object.keys(url).length > 0 ?
+      fetchWeather(setWeather, url)
+    :
+      console.log('no url')
   }, [url]);
 
   console.log(weather)
@@ -42,11 +44,11 @@ function App() {
     Object.keys(weather).length > 0 ?
     <div className="App">
       <h1>Weather App</h1>
-
+      <p>{weather.lat}</p>
     </div>
     :
       <h2>Loading...</h2>
-    );
+  );
 }
 
 export default App;
