@@ -33,7 +33,7 @@ function App() {
   getPosition(setUrl);
 
   useEffect(() => {
-    Object.keys(url).length > 0 ?
+    url.length > 0 ?
       fetchWeather(setWeather, url)
     :
       console.log('no url')
