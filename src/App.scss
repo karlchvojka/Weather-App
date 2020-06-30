@@ -1,0 +1,17 @@
+.weatherAppWrap {
+  width:800px;
+  height: auto;
+  margin: 0 auto;
+
+  .currentWeather {
+    display:grid;
+    grid-template-columns: 30% 1fr;
+  }
+
+  .currentLeft {
+    .internal {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
