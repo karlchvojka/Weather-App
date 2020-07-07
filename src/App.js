@@ -5,6 +5,8 @@ import Moment from 'react-moment';
 import './App.scss';
 import './Styles/fonts.scss';
 
+import { WiDaySunny, WiNightClear, WiDayCloudy, WiNightCloudy, WiCloud, WiCloudy, WiRain, WiDayRain, WiNightRain, WiDayThunderstorm, WiNightThunderstorm, WiDaySnow, WiNightSnow, WiDayHaze, WiNightFog } from "react-icons/wi";
+
 // Component Imports
 
 // Helper Functions
@@ -25,6 +27,49 @@ const fetchWeather = async (setWeather, url) => {
   setWeather(result.data);
 };
 // fetchWeather fetches data from the API and saves it into state
+
+function isNight() {
+  var date = new Date();
+  return (date.getHours() > 22 || date.getHours() < 6);
+}
+
+function WeatherIco(props) {
+  const date = new Date();
+  let night = isNight();
+  const icon = props.current;
+
+  if (icon === "clear sky" && night === false) {
+    return <WiDaySunny />
+  } else if (icon === "clear sky" && night === true) {
+    return <WiNightClear />
+  } else if (icon === "few clouds" && night === false) {
+    return <WiDayCloudy />
+  } else if (icon === "few clouds" && night === true) {
+    return <WiNightCloudy />
+  } else if (icon === "scattered clouds") {
+    return <WiCloud />
+  } else if (icon === "broken clouds" ) {
+    return <WiCloudy />
+  } else if (icon === "shower rain" ) {
+    return <WiRain />
+  } else if (icon === "rain" && night === false) {
+    return <WiDayRain />
+  } else if (icon === "rain" && night === true) {
+    return <WiNightRain />
+  } else if (icon === "thunderstorm" && night === false) {
+    return <WiDayThunderstorm />
+  } else if (icon === "thunderstorm" && night === true) {
+    return <WiNightThunderstorm />
+  } else if (icon === "snow" && night === false) {
+    return <WiDaySnow />
+  } else if (icon === "snow" && night === true) {
+    return <WiNightSnow />
+  } else if (icon === "mist" && night === false) {
+    return <WiDayHaze />
+  } else if (icon === "mist" && night === true) {
+    return <WiNightFog />
+  }
+}
 
 function App() {
   // Variables
@@ -51,10 +96,8 @@ function App() {
         <div className="weatherAppWrap">
           <div className="currentWeather">
             <div className="currentImg">
-              <img
-                src={`http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@4x.png`}
-                />
-                </div>
+              <WeatherIco current={weather.current.weather[0].description} />
+              </div>
             <div className="currentLeft">
               <div className="currentTitle">
                 <h2>
@@ -68,9 +111,9 @@ function App() {
               </div>
               <div className="internal">
                 <div className="internal_left">
-                  <p>Current: {weather.current.temp}</p>
-                  <p>Feels Like: {weather.current.feels_like}</p>
                   <p>Conditions: {weather.current.weather[0].description}</p>
+                  <p>Current Temp: {weather.current.temp}</p>
+                  <p>Feels Like: {weather.current.feels_like}</p>
                   </div>
                 <div className="internal_right">
                   <p>

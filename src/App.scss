@@ -6,6 +6,15 @@
   .currentWeather {
     display:grid;
     grid-template-columns: 30% 1fr;
+
+    .currentImg {
+      svg {
+        display: block;
+        height: 100%;
+        width: auto;
+        margin: 0 auto;
+      }
+    }
   }
 
   .currentLeft {
