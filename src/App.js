@@ -8,6 +8,7 @@ import './Styles/fonts.scss';
 import { WiDaySunny, WiNightClear, WiDayCloudy, WiNightCloudy, WiCloud, WiCloudy, WiRain, WiDayRain, WiNightRain, WiDayThunderstorm, WiNightThunderstorm, WiDaySnow, WiNightSnow, WiDayHaze, WiNightFog } from "react-icons/wi";
 
 // Component Imports
+import CurrentWeather from './Components/Organisms/currentWeather';
 
 // Helper Functions
 const getPosition = (setUrl) => {
@@ -28,14 +29,10 @@ const fetchWeather = async (setWeather, url) => {
 };
 // fetchWeather fetches data from the API and saves it into state
 
-function isNight() {
-  var date = new Date();
-  return (date.getHours() > 22 || date.getHours() < 6);
-}
-
+// Helper Functions
 function WeatherIco(props) {
   const date = new Date();
-  let night = isNight();
+  let night = IsNight();
   const icon = props.current;
 
   if (icon === "clear sky" && night === false) {
@@ -71,9 +68,15 @@ function WeatherIco(props) {
   }
 }
 
+function IsNight() {
+  var date = new Date();
+  return (date.getHours() > 22 || date.getHours() < 6);
+}
+
+
 function dailyList(days) {
   const week = days.slice(1, 8);
-  
+
   return week.map((item, key) =>
     <li>
       <p>
@@ -116,47 +119,9 @@ function App() {
       </header>
       <main>
         <div className="weatherAppWrap">
-          <div className="currentWeather">
-            <div className="currentLeft">
-              <div className="currentTop">
-                <div className="currentIcon">
-                  <WeatherIco current={weather.current.weather[weather.current.weather.length-1].description} />
-                </div>
-                <div className="currentTemp">
-                  <p>{weather.current.temp}</p>
-                </div>
-              </div>
-              <div className="currentBottom">
-                 <p>Feels Like: {weather.current.feels_like}</p>
-              </div>
-            </div>
-            <div className="currentRight">
-              <p>Humidity: {weather.current.humidity}%</p>
-              <p>Sunrise:
-                <Moment
-                  format="hh:mm A"
-                  unix
-                  >
-                    {weather.current.sunrise}
-                </Moment>
-              </p>
-              <p>Sunset:
-                <Moment
-                  format="hh:mm A"
-                  unix
-                  >
-                    {weather.current.sunset}
-                  </Moment>
-              </p>
-              <p>Pressure: {weather.current.pressure} hpa</p>
-              <p>Wind Direction: {weather.current.wind_deg}</p>
-              <p>Wind Speed: {weather.current.wind_speed} KM/H
-              </p>
-            </div>
-          </div>
+          <CurrentWeather current={weather.current} />
           <div className="futureWeather">
             <ul>
-
               {dailyList(weather.daily)}
             </ul>
           </div>
