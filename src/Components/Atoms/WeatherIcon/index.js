@@ -7,7 +7,6 @@ import { WiDaySunny, WiNightClear, WiDayCloudy, WiNightCloudy, WiCloud, WiCloudy
 import { IsNight } from '../../../Helpers/IsNight.js'
 
 function WeatherIco(props) {
-  const date = new Date();
   let night = IsNight();
   const icon = props.current;
 
