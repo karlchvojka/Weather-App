@@ -1,14 +1,17 @@
 // Apps Global Styles
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@300;400;500;700&family=Titillium+Web:wght@300;400;600;700&display=swap');
 
 // Variables
 
 // Fonts
 $headerFont : 'Montserrat', sans-serif;
 $paraFont : 'Lato', sans-serif;
+$cyberFont: 'Titillium Web', sans-serif;
 
 // Colors
 $lightGrey: #606060;
+$cyberBlue: #00ABDF;
+$darkBlue: #006F91;
 
 // Other
 $spacing : 20px;

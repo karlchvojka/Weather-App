@@ -50,16 +50,16 @@ function WeatherIco(props) {
     return <WiCloud />
   } else if (icon === "broken clouds" ) {
     return <WiCloudy />
+  } else if (icon.includes("thunderstorm") && night === false) {
+    return <WiDayThunderstorm />
+  } else if (icon.includes("thunderstorm") && night === true) {
+    return <WiNightThunderstorm />
   } else if (icon === "shower rain" ) {
     return <WiRain />
-  } else if (icon === "rain" && night === false) {
+  } else if (icon.includes("rain") && night === false) {
     return <WiDayRain />
-  } else if (icon === "rain" && night === true) {
+  } else if (icon.includes("rain") && night === true) {
     return <WiNightRain />
-  } else if (icon === "thunderstorm" && night === false) {
-    return <WiDayThunderstorm />
-  } else if (icon === "thunderstorm" && night === true) {
-    return <WiNightThunderstorm />
   } else if (icon === "snow" && night === false) {
     return <WiDaySnow />
   } else if (icon === "snow" && night === true) {
@@ -69,6 +69,27 @@ function WeatherIco(props) {
   } else if (icon === "mist" && night === true) {
     return <WiNightFog />
   }
+}
+
+function dailyList(days) {
+  const week = days.slice(1, 8);
+  
+  return week.map((item, key) =>
+    <li>
+      <p>
+        <Moment
+          format="MMM D"
+          unix
+          >
+            {item.dt}
+        </Moment>
+      </p>
+      <p>
+        <WeatherIco current={item.weather[0].description} />
+      </p>
+      <p>{item.temp.day}</p>
+    </li>
+  )
 }
 
 function App() {
@@ -85,6 +106,7 @@ function App() {
       console.log('no url')
   }, [url]);
 
+  const daily = weather.daily;
   console.log('we', weather);
   return (
     Object.keys(weather).length > 0 ?
@@ -95,55 +117,48 @@ function App() {
       <main>
         <div className="weatherAppWrap">
           <div className="currentWeather">
-            <div className="currentImg">
-              <WeatherIco current={weather.current.weather[0].description} />
-              </div>
             <div className="currentLeft">
-              <div className="currentTitle">
-                <h2>
-                  <Moment
-                    format="MMM Do YYYY"
-                    unix
-                    >
-                      {weather.current.dt}
-                  </Moment>
-                </h2>
-              </div>
-              <div className="internal">
-                <div className="internal_left">
-                  <p>Conditions: {weather.current.weather[0].description}</p>
-                  <p>Current Temp: {weather.current.temp}</p>
-                  <p>Feels Like: {weather.current.feels_like}</p>
-                  </div>
-                <div className="internal_right">
-                  <p>
-                    Humidity: {weather.current.humidity}%
-                    </p>
-                  <p>
-                    Sunrise:
-                    <Moment
-                      format="hh:mm A"
-                      unix
-                      >
-                        {weather.current.sunrise}
-                      </Moment>
-                    </p>
-                  <p>
-                    Sunset:
-                      <Moment
-                        format="hh:mm A"
-                        unix
-                        >
-                          {weather.current.sunset}
-                        </Moment>
-                    </p>
+              <div className="currentTop">
+                <div className="currentIcon">
+                  <WeatherIco current={weather.current.weather[weather.current.weather.length-1].description} />
+                </div>
+                <div className="currentTemp">
+                  <p>{weather.current.temp}</p>
                 </div>
               </div>
+              <div className="currentBottom">
+                 <p>Feels Like: {weather.current.feels_like}</p>
+              </div>
+            </div>
+            <div className="currentRight">
+              <p>Humidity: {weather.current.humidity}%</p>
+              <p>Sunrise:
+                <Moment
+                  format="hh:mm A"
+                  unix
+                  >
+                    {weather.current.sunrise}
+                </Moment>
+              </p>
+              <p>Sunset:
+                <Moment
+                  format="hh:mm A"
+                  unix
+                  >
+                    {weather.current.sunset}
+                  </Moment>
+              </p>
+              <p>Pressure: {weather.current.pressure} hpa</p>
+              <p>Wind Direction: {weather.current.wind_deg}</p>
+              <p>Wind Speed: {weather.current.wind_speed} KM/H
+              </p>
             </div>
           </div>
-          <div className="dailyWrap">
-            <div>
-            </div>
+          <div className="futureWeather">
+            <ul>
+
+              {dailyList(weather.daily)}
+            </ul>
           </div>
         </div>
       </main>

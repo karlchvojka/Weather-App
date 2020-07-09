@@ -1,26 +1,59 @@
-.weatherAppWrap {
-  width:800px;
-  height: auto;
-  margin: 0 auto;
+@import './Styles/variables.scss';
+@import './Styles/fonts.scss';
 
-  .currentWeather {
-    display:grid;
-    grid-template-columns: 30% 1fr;
+body {
+background-color:#000;
 
-    .currentImg {
-      svg {
-        display: block;
-        height: 100%;
-        width: auto;
-        margin: 0 auto;
+  .weatherAppWrap {
+    width:800px;
+    height: auto;
+    margin: 0 auto;
+
+    .currentWeather {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+
+      .currentLeft {
+        .currentTop {
+          display:grid;
+          grid-template-columns: 1fr 1fr;
+          .currentIcon {
+            svg {
+              display: block;
+              color: $cyberBlue;
+              height: auto;
+              width: 100%;
+              margin: 0 auto;
+            }
+          }
+          .currentTemp {
+            p {
+              font-size:40px;
+              font-weight:700;
+              color: $cyberBlue;
+            }
+          }
+        }
+      }
+
+      .currentRight {
+
+      }
+
+      .currentLeft {
+        .internal {
+          display:grid;
+          grid-template-columns: 1fr 1fr;
+        }
       }
     }
-  }
 
-  .currentLeft {
-    .internal {
-      display:grid;
-      grid-template-columns: 1fr 1fr;
+    .futureWeather {
+      ul {
+        display:grid;
+        grid-template-columns: repeat(7, 1fr);
+      }
     }
+
   }
 }
