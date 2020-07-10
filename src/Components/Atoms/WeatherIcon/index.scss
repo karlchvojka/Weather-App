@@ -1,0 +1,10 @@
+@import '../../../Styles/variables.scss';
+@import '../../../Styles/fonts.scss';
+
+svg {
+  display: block;
+  color: $cyberBlue;
+  height: auto;
+  width: 60%;
+  margin: 0 auto;
+}

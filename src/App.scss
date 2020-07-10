@@ -17,15 +17,6 @@ background-color:#000;
         .currentTop {
           display:grid;
           grid-template-columns: 1fr 1fr;
-          .currentIcon {
-            svg {
-              display: block;
-              color: $cyberBlue;
-              height: auto;
-              width: 100%;
-              margin: 0 auto;
-            }
-          }
           .currentTemp {
             p {
               font-size:40px;
