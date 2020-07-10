@@ -24,7 +24,7 @@ function App() {
     url ?
       FetchWeather(setWeather, url)
     :
-      console.log('no url')
+      console.log('No Url Applied. Please check the URL.');
   }, [url]);
 
   return (
