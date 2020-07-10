@@ -1,0 +1,21 @@
+@import '../../../Styles/variables.scss';
+@import '../../../Styles/fonts.scss';
+
+li {
+  border: 1px solid $cyberBlue;
+  margin: 0 2.5px;
+
+  h3 {
+    text-align:center;
+  }
+  p {
+    text-align:center;
+    color:$cyberBlue;
+    font-weight:700;
+    margin-bottom: 0px;
+  }
+
+  svg {
+    margin-bottom:10px;
+  }
+}
