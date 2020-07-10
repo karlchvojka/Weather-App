@@ -11,7 +11,7 @@ function DailyList(props) {
   const week = props.days.slice(1, 8);
 
   return week.map((item, key) =>
-    <li>
+    <li key={key.toString()}>
       <p>
         <Moment
           format="MMM D"
