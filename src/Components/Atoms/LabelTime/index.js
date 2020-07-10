@@ -5,7 +5,7 @@ import Moment from 'react-moment';
 
 function LabelTime(props) {
   return (
-    <p>{props.label}: <Moment format={props.format} unix>{props.text}</Moment></p>
+    <p className="weatherLabel"><span>{props.label}:</span> <Moment format={props.format} unix>{props.text}</Moment></p>
   )
 }
 

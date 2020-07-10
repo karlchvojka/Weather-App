@@ -9,36 +9,6 @@ background-color:#000;
     height: auto;
     margin: 0 auto;
 
-    .currentWeather {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-
-      .currentLeft {
-        .currentTop {
-          display:grid;
-          grid-template-columns: 1fr 1fr;
-          .currentTemp {
-            p {
-              font-size:40px;
-              font-weight:700;
-              color: $cyberBlue;
-            }
-          }
-        }
-      }
-
-      .currentRight {
-
-      }
-
-      .currentLeft {
-        .internal {
-          display:grid;
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    }
-
     .futureWeather {
       ul {
         display:grid;
