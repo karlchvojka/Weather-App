@@ -1,0 +1,17 @@
+@import '../../../Styles/variables.scss';
+@import '../../../Styles/fonts.scss';
+
+.futureWeather {
+  ul {
+    padding-left: 0px;
+    margin: 5px 0px;
+  }
+
+  li:first-child {
+    margin-left: 0px;
+  }
+
+  li:last-child {
+    margin-right: 0px;
+  }
+}
