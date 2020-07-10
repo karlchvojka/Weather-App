@@ -1,0 +1,45 @@
+@import '../../../Styles/variables.scss';
+@import '../../../Styles/fonts.scss';
+
+.currentWeather {
+  display:grid;
+  grid-template-columns:20% 30% 1fr 1fr;
+  border: 1px solid $cyberBlue;
+  padding:10px;
+
+  .currentIcon {
+    svg {
+      height: 130px;
+      width: 130px;
+      margin: 0 auto;
+    }
+  }
+
+  .currentTemp, .currentCenter, .currentRight {
+    padding-top:20px;
+
+    p{
+      margin-bottom:20px;
+    }
+  }
+
+  .currentCenter, .currentRight {
+    padding: 20px 10px 0px 10px;
+  }
+
+  .currentTemp {
+    p {
+      color: $cyberBlue;
+      text-align: center;
+    }
+    .currTemp {
+      font-size:70px;
+      line-height:55px;
+      font-weight:700;
+      margin-bottom: 18px;
+    }
+    .weatherLabel {
+      margin-bottom: 0px;
+    }
+  }
+}
