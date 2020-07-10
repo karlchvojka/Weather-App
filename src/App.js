@@ -17,12 +17,13 @@ function App() {
   // Variables
   const [url, setUrl] = useState('');
   const [weather, setWeather] = useState({});
+  const [current, setCurrent] = useState({});
 
   GetPosition(setUrl);
 
   useEffect(() => {
     url ?
-      FetchWeather(setWeather, url)
+      FetchWeather(setWeather, setCurrent, url)
     :
       console.log('No Url Applied. Please check the URL.');
   }, [url]);
@@ -35,7 +36,7 @@ function App() {
       </header>
       <main>
         <div className="weatherAppWrap">
-          <CurrentWeather current={weather.current} />
+          <CurrentWeather current={current} />
           <FutureWeather daily={weather.daily} />
         </div>
       </main>

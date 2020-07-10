@@ -1,7 +1,10 @@
 // System required Imports
 import React from 'react';
-import Moment from 'react-moment';
-import WeatherIco from '../../Atoms/WeatherIcon/'
+
+// Component Imports
+import WeatherIco from '../../Atoms/WeatherIcon/';
+import LabelEle from '../../Atoms/Label/';
+import LabelTime from '../../Atoms/LabelTime/';
 
 // Helper Functions
 
@@ -9,6 +12,7 @@ function CurrentWeather(props) {
   const weather = props.current;
 
   return (
+    Object.keys(weather).length > 0 ?
     <div className="currentWeather">
       <div className="currentLeft">
         <div className="currentTop">
@@ -17,36 +21,21 @@ function CurrentWeather(props) {
           </div>
           <div className="currentTemp">
             <p>{weather.temp}</p>
+            <LabelEle label={'Feels Like'} text={weather.feels_like} />
           </div>
-        </div>
-        <div className="currentBottom">
-           <p>Feels Like: {weather.feels_like}</p>
         </div>
       </div>
       <div className="currentRight">
-        <p>Humidity: {weather.humidity}%</p>
-        <p>Sunrise:
-          <Moment
-            format="hh:mm A"
-            unix
-            >
-              {weather.sunrise}
-          </Moment>
-        </p>
-        <p>Sunset:
-          <Moment
-            format="hh:mm A"
-            unix
-            >
-              {weather.sunset}
-            </Moment>
-        </p>
-        <p>Pressure: {weather.pressure} hpa</p>
-        <p>Wind Direction: {weather.wind_deg}</p>
-        <p>Wind Speed: {weather.wind_speed} KM/H
-        </p>
+        <LabelEle label={'Humidity'} text={weather.humidity + '%'} />
+        <LabelTime label={'Sunrise'} format={'hh:mm A'} text={weather.sunrise} />
+        <LabelTime label={'Sunset'} format={'hh:mm A'} text={weather.sunset} />
+        <LabelEle label={'Pressure'} text={weather.pressure} />
+        <LabelEle label={'Wind Direction'} text={weather.wind_deg} />
+        <LabelEle label={'Wind Speed'} text={weather.wind_speed} />
       </div>
     </div>
+    :
+    <h2>Loading...</h2>
   );
 }
 
