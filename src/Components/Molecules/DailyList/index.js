@@ -21,7 +21,7 @@ function DailyList(props) {
             {item.dt}
         </Moment>
       </h3>
-      <WeatherIco current={item.weather[0].description} />
+      <WeatherIco current={item.weather[0].description} place={'daily'} />
       <p>{item.temp.day}</p>
     </li>
   )

@@ -9,7 +9,9 @@ import { IsNight } from '../../../Helpers/IsNight.js'
 
 function WeatherIco(props) {
   let night = IsNight();
+
   const icon = props.current;
+  const place = props.place;
 
   if (icon === "clear sky" && night === false) {
     return <WiDaySunny />

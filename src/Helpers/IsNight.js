@@ -2,8 +2,8 @@
 
 export const IsNight = () => {
   var date = new Date();
-
+  console.log(date.getHours())
   return (
-    date.getHours() > 22 || date.getHours() < 6
+    date.getHours() > 18 || date.getHours() < 6
   );
 }

@@ -15,7 +15,7 @@ function CurrentWeather(props) {
     Object.keys(weather).length > 0 ?
     <div className="currentWeather">
       <div className="currentIcon">
-        <WeatherIco current={weather.weather[weather.weather.length-1].description} />
+        <WeatherIco current={weather.weather[weather.weather.length-1].description} place={'current'} />
       </div>
       <div className="currentTemp">
         <p className="currTemp">{weather.temp}</p>
