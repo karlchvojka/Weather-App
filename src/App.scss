@@ -9,12 +9,5 @@ background-color:#000;
     height: auto;
     margin: 0 auto;
 
-    .futureWeather {
-      ul {
-        display:grid;
-        grid-template-columns: repeat(8, 1fr);
-      }
-    }
-
   }
 }
