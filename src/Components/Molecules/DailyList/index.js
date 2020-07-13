@@ -6,13 +6,15 @@ import './index.scss';
 // Component Imports
 import WeatherIco from '../../Atoms/WeatherIcon/';
 
-// Helper Functions
-
 function DailyList(props) {
-  const week = props.days.slice(1, 8);
+  const week = props.days.daily;
+
+  const dateSelect = event => {
+    props.selectedDate(event.currentTarget.id)
+  }
 
   return week.map((item, key) =>
-    <li key={key.toString()}>
+    <li id={key.toString()} key={key.toString()} onClick={dateSelect} >
       <h3>
         <Moment
           format="MMM D"

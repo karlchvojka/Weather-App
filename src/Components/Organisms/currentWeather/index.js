@@ -8,28 +8,29 @@ import LabelTime from '../../Atoms/LabelTime/';
 
 // Helper Functions
 
-function CurrentWeather(props) {
-  const weather = props.current;
 
+function CurrentWeather(props) {
+
+  const current = props.current;
   return (
-    Object.keys(weather).length > 0 ?
+    Object.keys(current).length > 0 ?
     <div className="currentWeather">
       <div className="currentIcon">
-        <WeatherIco current={weather.weather[weather.weather.length-1].description} place={'current'} />
+        <WeatherIco current={current.weather[current.weather.length-1].description} place={'current'} />
       </div>
       <div className="currentTemp">
-        <p className="currTemp">{weather.temp}</p>
-        <LabelEle label={'Feels Like'} text={weather.feels_like} />
+        <p className="currTemp">{current.temp.day}</p>
+        <LabelEle label={'Feels Like'} text={current.feels_like.day} />
       </div>
       <div className="currentCenter">
-        <LabelEle label={'Humidity'} text={weather.humidity + '%'} />
-        <LabelTime label={'Sunrise'} format={'hh:mm A'} text={weather.sunrise} />
-        <LabelTime label={'Sunset'} format={'hh:mm A'} text={weather.sunset} />
+        <LabelEle label={'Humidity'} text={current.humidity + '%'} />
+        <LabelTime label={'Sunrise'} format={'hh:mm A'} text={current.sunrise} />
+        <LabelTime label={'Sunset'} format={'hh:mm A'} text={current.sunset} />
       </div>
       <div className="currentRight">
-        <LabelEle label={'Pressure'} text={weather.pressure} />
-        <LabelEle label={'Wind Direction'} text={weather.wind_deg} />
-        <LabelEle label={'Wind Speed'} text={weather.wind_speed} />
+        <LabelEle label={'Pressure'} text={current.pressure} />
+        <LabelEle label={'Wind Direction'} text={current.wind_deg} />
+        <LabelEle label={'Wind Speed'} text={current.wind_speed} />
       </div>
     </div>
     :

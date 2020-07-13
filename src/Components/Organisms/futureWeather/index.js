@@ -10,11 +10,14 @@ import DailyList from '../../Molecules/DailyList';
 function FutureWeather(props) {
 
   return (
+    Object.keys(props.daily).length > 0 ?
     <div className="futureWeather">
       <ul>
-        <DailyList days={props.daily} />
+        <DailyList days={props.daily} selectedDate={props.selected} />
       </ul>
     </div>
+    :
+    <h2>loading</h2>
   )
 }
 

@@ -11,7 +11,6 @@ function WeatherIco(props) {
   let night = IsNight();
 
   const icon = props.current;
-  const place = props.place;
 
   if (icon === "clear sky" && night === false) {
     return <WiDaySunny />
@@ -24,6 +23,8 @@ function WeatherIco(props) {
   } else if (icon === "scattered clouds") {
     return <WiCloud />
   } else if (icon === "broken clouds" ) {
+    return <WiCloudy />
+  } else if (icon.includes('cloud') ) {
     return <WiCloudy />
   } else if (icon.includes("thunderstorm") && night === false) {
     return <WiDayThunderstorm />
@@ -43,6 +44,8 @@ function WeatherIco(props) {
     return <WiDayHaze />
   } else if (icon === "mist" && night === true) {
     return <WiNightFog />
+  } else {
+    console.log('fail')
   }
 }
 

@@ -15,18 +15,23 @@ import { FetchWeather } from './Helpers/FetchWeather.js';
 
 function App() {
   // Variables
-  const [url, setUrl] = useState('');
-  const [weather, setWeather] = useState({});
-  const [current, setCurrent] = useState({});
+  const [pos, setPos] = useState([]);
+  const [selectedDate, setSelectedDate] = useState('0');
+  const [weather, setWeather] = useState([]);
+  const [today, setToday] = useState({});
 
-  GetPosition(setUrl);
+  GetPosition(setPos);
 
   useEffect(() => {
-    url ?
-      FetchWeather(setWeather, setCurrent, url)
-    :
-      console.log('No Url Applied. Please check the URL.');
-  }, [url]);
+    const fetchData = async () => {
+      Object.keys(pos).length > 0 ?
+        FetchWeather(setWeather, setToday, selectedDate, pos)
+      :
+      console.log('pos not defined')
+    };
+
+    fetchData();
+  }, [pos, selectedDate]);
 
   return (
     Object.keys(weather).length > 0 ?
@@ -36,8 +41,8 @@ function App() {
       </header>
       <main>
         <div className="weatherAppWrap">
-          <CurrentWeather current={current} />
-          <FutureWeather daily={weather.daily} />
+          <CurrentWeather current={weather.daily[selectedDate]} />
+          <FutureWeather daily={weather} selected={setSelectedDate} />
         </div>
       </main>
     </div>
