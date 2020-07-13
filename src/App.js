@@ -32,7 +32,7 @@ function App() {
 
     fetchData();
   }, [pos, selectedDate]);
-
+  console.log(weather)
   return (
     Object.keys(weather).length > 0 ?
     <div className="App">
