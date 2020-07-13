@@ -6,14 +6,115 @@
     padding-left: 0px;
     margin: 5px 0px;
     display:grid;
-    grid-template-columns: repeat(8, 1fr);
-  }
+    grid-template-columns: 1fr;
 
-  li:first-child {
-    margin-left: 0px;
-  }
+    li {
+      display:grid;
+      height:150px;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0px 0px 10px 0px;
+      grid-template-areas: "indWeatherIco indDate"
+                           "indWeatherIco indTemp";
 
-  li:last-child {
-    margin-right: 0px;
+      h3 {
+        grid-area: indDate;
+      }
+
+      svg {
+        grid-area: indWeatherIco;
+        margin-bottom: 0px;
+        vertical-align: middle;
+        height:90%;
+      }
+
+      p {
+        grid-area: indTemp;
+      }
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .futureWeather {
+    ul {
+      display:grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      li {
+        grid-template-columns: 100%;
+        grid-template-areas: "indDate"
+                             "indWeatherIco"
+                             "indTemp";
+        margin: 0px 2%;
+      }
+    }
+
+    li:first-child {
+      margin-left: 0px;
+    }
+
+    li:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .futureWeather {
+    ul {
+      display:grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      li {
+        grid-template-columns: 100%;
+        grid-template-areas: "indDate"
+                             "indWeatherIco"
+                             "indTemp";
+        margin: 0px 2%;
+      }
+    }
+
+    li:first-child {
+      margin-left: 0px;
+    }
+
+    li:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .futureWeather {
+    ul {
+      display:grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      li {
+        grid-template-columns: 100%;
+        grid-template-areas: "indDate"
+                             "indWeatherIco"
+                             "indTemp";
+        margin: 0px 2%;
+      }
+    }
+
+    li:first-child {
+      margin-left: 0px;
+    }
+
+    li:last-child {
+      margin-right: 0px;
+    }
   }
 }

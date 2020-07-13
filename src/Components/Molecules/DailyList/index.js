@@ -7,7 +7,7 @@ import './index.scss';
 import WeatherIco from '../../Atoms/WeatherIcon/';
 
 function DailyList(props) {
-  const week = props.days.daily;
+  const week = props.days.daily.slice(0, 7);
 
   const dateSelect = event => {
     props.selectedDate(event.currentTarget.id)
@@ -15,7 +15,7 @@ function DailyList(props) {
 
   return week.map((item, key) =>
     <li id={key.toString()} key={key.toString()} onClick={dateSelect} >
-      <h3>
+      <h3 className="indDate">
         <Moment
           format="MMM D"
           unix
@@ -23,8 +23,8 @@ function DailyList(props) {
             {item.dt}
         </Moment>
       </h3>
-      <WeatherIco current={item.weather[0].description} place={'daily'} />
-      <p>{item.temp.day}</p>
+      <WeatherIco className="indWeatherIco" current={item.weather[0].description} place={'daily'} />
+      <p className="indTemp">{item.temp.day}</p>
     </li>
   )
 }

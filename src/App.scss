@@ -5,9 +5,37 @@ body {
 background-color:#000;
 
   .weatherAppWrap {
-    width:800px;
+    width:98%;
     height: auto;
     margin: 0 auto;
 
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .weatherAppWrap {
+    width:500px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .weatherAppWrap {
+    width:600px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .weatherAppWrap {
+    width:800px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .weatherAppWrap {
+    width:800px;
   }
 }
