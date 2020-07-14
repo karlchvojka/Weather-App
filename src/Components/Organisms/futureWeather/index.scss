@@ -4,31 +4,41 @@
 .futureWeather {
   ul {
     padding-left: 0px;
-    margin: 5px 0px;
+    margin: 10px 0px;
     display:grid;
-    grid-template-columns: 1fr;
+    grid-template-columns:50% 50%;
 
     li {
       display:grid;
-      height:150px;
-      grid-template-columns: repeat(2, 1fr);
-      margin: 0px 0px 10px 0px;
+      grid-template-columns: repeat(2, 48%);
+      margin: 0px 1% 10px 1%;
       grid-template-areas: "indWeatherIco indDate"
                            "indWeatherIco indTemp";
 
       h3 {
         grid-area: indDate;
+        height: 50%;
       }
-
+      .indDate {
+        font-size:30px;
+        text-align:center;
+      }
       svg {
         grid-area: indWeatherIco;
-        margin-bottom: 0px;
+        height:100px;
+        margin: 10px auto;
         vertical-align: middle;
-        height:90%;
+        width:auto;
       }
 
       p {
         grid-area: indTemp;
+      }
+
+      .indTemp {
+        font-size:35px;
+        height: 50%;
+        text-align:center;
       }
     }
   }
@@ -54,6 +64,21 @@
                              "indWeatherIco"
                              "indTemp";
         margin: 0px 2%;
+        padding:5px;
+
+        .indDate {
+          font-size:18px;
+          line-height:20px;
+        }
+
+        svg {
+          height:50px;
+        }
+
+        .indTemp {
+          font-size:20px;
+          line-height:22px;
+        }
       }
     }
 
@@ -80,6 +105,21 @@
                              "indWeatherIco"
                              "indTemp";
         margin: 0px 2%;
+        padding:5px;
+
+        .indDate {
+          font-size:22px;
+          line-height:24px;
+        }
+
+        svg {
+          height:80px;
+        }
+
+        .indTemp {
+          font-size:24px;
+          line-height:26px;
+        }
       }
     }
 
@@ -106,6 +146,21 @@
                              "indWeatherIco"
                              "indTemp";
         margin: 0px 2%;
+        padding:5px;
+
+        .indDate {
+          font-size:22px;
+          line-height:24px;
+        }
+
+        svg {
+          height:80px;
+        }
+
+        .indTemp {
+          font-size:24px;
+          line-height:26px;
+        }
       }
     }
 

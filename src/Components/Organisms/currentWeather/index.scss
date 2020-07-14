@@ -3,20 +3,25 @@
 
 .currentWeather {
   display:grid;
-  grid-template-columns:20% 30% 1fr 1fr;
+  grid-template-columns:35% 30% 35%;
   border: 1px solid $cyberBlue;
   padding:10px;
 
+  grid-template-areas: "currIcon currCenter currRight"
+                       "currTemp currCenter currRight";
+
   .currentIcon {
+    grid-area: currIcon;
+
     svg {
-      height: 130px;
-      width: 130px;
+      height: 80px;
+      width: auto;
       margin: 0 auto;
     }
   }
 
   .currentTemp, .currentCenter, .currentRight {
-    padding-top:20px;
+    padding-top:0px;
 
     p{
       margin-bottom:20px;
@@ -24,22 +29,156 @@
   }
 
   .currentCenter, .currentRight {
-    padding: 20px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
+
+    .weatherLabel {
+      display:block;
+      font-size:14px;
+      margin-bottom:15px;
+
+      span {
+        display:block;
+        margin-bottom:5px;
+      }
+    }
   }
 
   .currentTemp {
+    grid-area:currTemp;
+
     p {
       color: $cyberBlue;
       text-align: center;
     }
     .currTemp {
-      font-size:70px;
-      line-height:55px;
+      font-size:25px;
+      line-height:27px;
       font-weight:700;
-      margin-bottom: 18px;
+      margin-bottom: 5px;
     }
     .weatherLabel {
       margin-bottom: 0px;
+    }
+  }
+
+  .currentCenter {
+    grid-area:currCenter;
+  }
+
+  .currentRight {
+    grid-area:currRight;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .currentWeather {
+    grid-template-columns:35% 30% 35%;
+    grid-template-areas: "currIcon currCenter currRight"
+                         "currTemp currCenter currRight";
+
+    .currentIcon {
+      svg {
+        height: 100px;
+        width: 100px;
+      }
+    }
+
+    .currentTemp, .currentCenter, .currentRight {
+      padding-top:20px;
+    }
+
+    .currentTemp {
+
+      .currTemp {
+        font-size:40px;
+        line-height:42px;
+        margin-bottom: 18px;
+      }
+    }
+
+    .currentCenter, .currentRight {
+      .weatherLabel {
+        font-size:16px;
+        line-height:18px;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .currentWeather {
+    grid-template-columns:20% 30% 1fr 1fr;
+    grid-template-areas: "currIcon currTemp currCenter currRight";
+
+    .currentIcon {
+      svg {
+        height: 130px;
+        width: 130px;
+      }
+    }
+
+    .currentTemp, .currentCenter, .currentRight {
+      padding-top:20px;
+    }
+
+    .currentTemp {
+
+      .currTemp {
+        font-size:70px;
+        line-height:55px;
+        margin-bottom: 18px;
+      }
+    }
+
+    .currentCenter, .currentRight {
+      .weatherLabel {
+        font-size:16px;
+        line-height:18px;
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .currentWeather {
+    grid-template-columns:20% 30% 1fr 1fr;
+    grid-template-areas: "currIcon currTemp currCenter currRight";
+
+    .currentIcon {
+      svg {
+        height: 130px;
+        width: 130px;
+      }
+    }
+
+    .currentTemp, .currentCenter, .currentRight {
+      padding-top:20px;
+    }
+
+    .currentTemp {
+
+      .currTemp {
+        font-size:70px;
+        line-height:55px;
+        margin-bottom: 18px;
+      }
+    }
+
+    .currentCenter, .currentRight {
+      .weatherLabel {
+        font-size:18px;
+        line-height:20px;
+      }
     }
   }
 }
