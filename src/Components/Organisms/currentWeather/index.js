@@ -19,7 +19,7 @@ function CurrentWeather(props) {
         <WeatherIco current={current.weather[current.weather.length-1].description} place={'current'} />
       </div>
       <div className="currentTemp">
-        <p className="currTemp">{current.temp.day}</p>
+        <p className="currTemp">{current.temp.day} &#176;C</p>
         <LabelEle label={'Feels Like'} text={current.feels_like.day} />
       </div>
       <div className="currentCenter">

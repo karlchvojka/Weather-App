@@ -17,16 +17,17 @@
 
       h3 {
         grid-area: indDate;
-        height: 50%;
+        margin-top:10px;
       }
       .indDate {
-        font-size:30px;
+        font-size:20px;
+        line-height:22px;
         text-align:center;
       }
       svg {
         grid-area: indWeatherIco;
-        height:100px;
-        margin: 10px auto;
+        height:60px;
+        margin: 5px auto;
         vertical-align: middle;
         width:auto;
       }
@@ -36,8 +37,8 @@
       }
 
       .indTemp {
-        font-size:35px;
-        height: 50%;
+        font-size:20px;
+        line-height:22px;
         text-align:center;
       }
     }
