@@ -4,7 +4,12 @@ import './index.scss';
 
 function LabelEle(props) {
   return (
-    <p className="weatherLabel"><span>{props.label}:</span> {props.text}</p>
+    <p className="weatherLabel">
+      <span>
+        {props.label}:
+        </span>
+      {props.text}
+      </p>
   )
 }
 

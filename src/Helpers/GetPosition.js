@@ -3,7 +3,7 @@ export const GetPosition = (setPos) => {
     const pos = [
       position.coords.latitude,
       position.coords.longitude
-    ]
+    ];
     setPos(pos)
   });
 }

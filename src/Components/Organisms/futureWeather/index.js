@@ -13,7 +13,10 @@ function FutureWeather(props) {
     Object.keys(props.daily).length > 0 ?
     <div className="futureWeather">
       <ul>
-        <DailyList days={props.daily} selectedDate={props.selected} />
+        <DailyList
+          days={props.daily}
+          selectedDate={props.selected}
+          />
       </ul>
     </div>
     :

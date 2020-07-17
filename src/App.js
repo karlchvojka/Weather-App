@@ -20,19 +20,14 @@ function App() {
   const [weather, setWeather] = useState([]);
   const [today, setToday] = useState({});
 
-  GetPosition(setPos);
+  useEffect(() => {
+    GetPosition(setPos);
+  }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
-      Object.keys(pos).length > 0 ?
-        FetchWeather(setWeather, setToday, selectedDate, pos)
-      :
-      console.log('pos not defined')
-    };
-
-    fetchData();
+    pos.length && FetchWeather(setWeather, setToday, selectedDate, pos);
   }, [pos, selectedDate]);
-  console.log(weather)
+
   return (
     Object.keys(weather).length > 0 ?
     <div className="App">

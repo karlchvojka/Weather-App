@@ -2,10 +2,26 @@ import React from 'react';
 import './index.scss';
 
 // Component required Imports
-import { WiDaySunny, WiNightClear, WiDayCloudy, WiNightCloudy, WiCloud, WiCloudy, WiRain, WiDayRain, WiNightRain, WiDayThunderstorm, WiNightThunderstorm, WiDaySnow, WiNightSnow, WiDayHaze, WiNightFog } from "react-icons/wi";
+import {
+  WiCloud,
+  WiCloudy,
+  WiDayCloudy,
+  WiDayHaze,
+  WiDayRain,
+  WiDaySnow,
+  WiDaySunny,
+  WiDayThunderstorm,
+  WiNightClear,
+  WiNightCloudy,
+  WiNightFog,
+  WiNightRain,
+  WiNightSnow,
+  WiNightThunderstorm,
+  WiRain
+  } from "react-icons/wi";
 
 // Helper Functions
-import { IsNight } from '../../../Helpers/IsNight.js'
+import { IsNight } from '../../../Helpers/IsNight.js';
 
 function WeatherIco(props) {
   let night = IsNight();

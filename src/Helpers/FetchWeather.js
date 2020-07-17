@@ -1,4 +1,4 @@
-// Checks to see if its currently night.
+// Fetches current weather.
 import axios from 'axios';
 
 export const FetchWeather = async (setWeather, setSelectedDate, selectedDate, pos) => {
@@ -6,7 +6,7 @@ export const FetchWeather = async (setWeather, setSelectedDate, selectedDate, po
   `http://api.openweathermap.org/data/2.5/onecall?lat=${pos[0]}&lon=${pos[1]}&units=metric&exclude=current, minuetly, hourly&appid=${process.env.REACT_APP_API_KEY}`
   );
 
-  // Set current User state
+  // Set Weather info into state, set selected date.
   setWeather(result.data);
   setSelectedDate(result.data.daily[selectedDate])
 };

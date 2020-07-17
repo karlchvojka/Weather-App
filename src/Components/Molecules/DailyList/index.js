@@ -14,7 +14,9 @@ function DailyList(props) {
   }
 
   return week.map((item, key) =>
-    <li id={key.toString()} key={key.toString()} onClick={dateSelect} >
+    <li id={key.toString()}
+        key={key.toString()}
+        onClick={dateSelect} >
       <h3 className="indDate">
         <Moment
           format="MMM D"
@@ -23,8 +25,14 @@ function DailyList(props) {
             {item.dt}
         </Moment>
       </h3>
-      <WeatherIco className="indWeatherIco" current={item.weather[0].description} place={'daily'} />
-      <p className="indTemp">{item.temp.day}&#176;C</p>
+      <WeatherIco
+        className="indWeatherIco"
+        current={item.weather[0].description}
+        place={'daily'}
+        />
+      <p className="indTemp">
+        {item.temp.day}&#176;C
+        </p>
     </li>
   )
 }
