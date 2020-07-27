@@ -12,7 +12,7 @@ function DailyList(props) {
   const dateSelect = event => {
     props.selectedDate(event.currentTarget.id)
   }
-  
+
   return week.map((item, key) =>
     <li id={key.toString()}
         key={key.toString()}
@@ -26,7 +26,8 @@ function DailyList(props) {
         place={'daily'}
         />
       <p className="indTemp">
-        {item.temp.day}&#176;C
+        High: {item.temp.max}&#176;C <br/>
+        Low: {item.temp.min}&#176;C
         </p>
     </li>
   )

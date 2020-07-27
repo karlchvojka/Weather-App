@@ -4,16 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is a practice project for Karl Chvojka
 
 ## MVP
-- Display 5-day forecast
+- Display 5-day forecast [Done]
 - Each day shows:
-  - High and Low tempratures
-  - Image for sunny/rainy/cloudy/snowy.
-- Ability to click the day and see hourly forecast
-- Add React Router to the project, and allow each day to show hourly forecast for said day.
-- Data to come from the Open Weather Map for Data
+  - High and Low tempratures [Done]
+  - Image for sunny/rainy/cloudy/snowy. [Done]
+- Data to come from the Open Weather Map for Data [Done]
 
 ## Stretch Goals
 - Add graphics library to graph the temprature over the course of the week/day.
+- Add React Router to the project, and allow each day to show hourly forecast for said day.
 
 ## Installation Notes
 - For this app to work you will need to get an API key:

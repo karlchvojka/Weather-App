@@ -12,6 +12,7 @@
       display:grid;
       grid-template-columns: repeat(2, 48%);
       margin: 0px 1% 10px 1%;
+      padding: 5px 10px 10px 10px;
       grid-template-areas: "indWeatherIco indDate"
                            "indWeatherIco indTemp";
 
@@ -23,6 +24,7 @@
         font-size:20px;
         line-height:22px;
         text-align:center;
+        margin-top:0px;
       }
       svg {
         grid-area: indWeatherIco;
@@ -37,8 +39,8 @@
       }
 
       .indTemp {
-        font-size:20px;
-        line-height:22px;
+        font-size:15px;
+        line-height:18px;
         text-align:center;
       }
     }
@@ -77,8 +79,8 @@
         }
 
         .indTemp {
-          font-size:20px;
-          line-height:22px;
+          font-size:13px;
+          line-height:18px;
         }
       }
     }
@@ -118,8 +120,8 @@
         }
 
         .indTemp {
-          font-size:24px;
-          line-height:26px;
+          font-size:13px;
+          line-height:18px;
         }
       }
     }
@@ -159,8 +161,8 @@
         }
 
         .indTemp {
-          font-size:24px;
-          line-height:26px;
+          font-size:13px;
+          line-height:18px;
         }
       }
     }

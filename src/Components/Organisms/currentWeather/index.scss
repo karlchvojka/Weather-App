@@ -2,147 +2,185 @@
 @import '../../../Styles/fonts.scss';
 
 .currentWeather {
-  display:grid;
-  grid-template-columns:35% 30% 35%;
   border: 1px solid $cyberBlue;
-  padding:10px;
 
-  grid-template-areas: "currIcon currCenter currRight"
-                       "currTemp currCenter currRight";
+  .currentTop {
+    padding: 10px;
 
-  .currentIcon {
-    grid-area: currIcon;
-
-    svg {
-      height: 80px;
-      width: auto;
-      margin: 0 auto;
-    }
-  }
-
-  .currentTemp, .currentCenter, .currentRight {
-    padding-top:0px;
-
-    p{
-      margin-bottom:20px;
-    }
-  }
-
-  .currentCenter, .currentRight {
-    padding: 0px 10px 0px 10px;
-
-    .weatherLabel {
-      display:block;
-      font-size:14px;
-      margin-bottom:15px;
-
-      span {
-        display:block;
-        margin-bottom:5px;
-      }
-    }
-  }
-
-  .currentTemp {
-    grid-area:currTemp;
-
-    p {
-      color: $cyberBlue;
+    h3 {
       text-align: center;
-    }
-    .currTemp {
-      font-size:25px;
-      line-height:27px;
-      font-weight:700;
-      margin-bottom: 5px;
-    }
-    .weatherLabel {
       margin-bottom: 0px;
+      font-size:30px;
     }
   }
 
-  .currentCenter {
-    grid-area:currCenter;
-  }
-
-  .currentRight {
-    grid-area:currRight;
-  }
-}
-
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .currentWeather {
+  .currentBottom {
+    display:grid;
     grid-template-columns:35% 30% 35%;
+    padding:10px;
+
     grid-template-areas: "currIcon currCenter currRight"
                          "currTemp currCenter currRight";
 
     .currentIcon {
+      grid-area: currIcon;
+
       svg {
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: auto;
+        margin: 0 auto;
       }
     }
 
     .currentTemp, .currentCenter, .currentRight {
-      padding-top:20px;
-    }
+      padding-top:0px;
 
-    .currentTemp {
-
-      .currTemp {
-        font-size:40px;
-        line-height:42px;
-        margin-bottom: 18px;
+      p{
+        margin-bottom:20px;
       }
     }
 
     .currentCenter, .currentRight {
+      padding: 0px 10px 0px 10px;
+
       .weatherLabel {
-        font-size:16px;
-        line-height:18px;
+        display:block;
+        font-size:14px;
+        margin-bottom:15px;
+
+        span {
+          display:block;
+          margin-bottom:5px;
+        }
+      }
+    }
+
+    .currentTemp {
+      grid-area:currTemp;
+
+      p {
+        color: $cyberBlue;
+        text-align: center;
+      }
+      .currTemp {
+        font-size:25px;
+        line-height:27px;
+        font-weight:700;
+        margin-bottom: 5px;
+      }
+
+      .indTemp {
+        span {
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+      .weatherLabel {
+        margin-bottom: 10px;
+      }
+    }
+
+    .currentCenter {
+      grid-area:currCenter;
+    }
+
+    .currentRight {
+      grid-area:currRight;
+    }
+  }
+
+  // Extra small devices (portrait phones, less than 576px)
+  // No media query since this is the default in Bootstrap
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .currentTop {
+      padding: 10px 10px 10px 20px;
+
+      h3 {
+        text-align: left;
+        font-size:30px;
+      }
+    }
+
+    .currentBottom {
+      grid-template-columns:35% 30% 35%;
+      grid-template-areas: "currIcon currCenter currRight"
+                           "currTemp currCenter currRight";
+
+      .currentIcon {
+        svg {
+          height: 100px;
+          width: 100px;
+        }
+      }
+
+      .currentTemp, .currentCenter, .currentRight {
+        padding-top:20px;
+      }
+
+      .currentTemp {
+
+        .currTemp {
+          font-size:40px;
+          line-height:42px;
+          margin-bottom: 18px;
+        }
+      }
+
+      .currentCenter, .currentRight {
+        .weatherLabel {
+          font-size:16px;
+          line-height:18px;
+        }
       }
     }
   }
-}
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .currentWeather {
-    grid-template-columns:20% 30% 1fr 1fr;
-    grid-template-areas: "currIcon currTemp currCenter currRight";
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .currentTop {
+      padding: 10px 10px 10px 20px;
 
-    .currentIcon {
-      svg {
-        height: 130px;
-        width: 130px;
+      h3 {
+        text-align: left;
+        font-size:30px;
       }
     }
 
-    .currentTemp, .currentCenter, .currentRight {
-      padding-top:20px;
-    }
+    .currentBottom {
+      grid-template-columns:20% 30% 1fr 1fr;
+      grid-template-areas: "currIcon currTemp currCenter currRight";
 
-    .currentTemp {
-
-      .currTemp {
-        font-size:56px;
-        line-height:58px;
-        margin-bottom: 18px;
+      .currentIcon {
+        svg {
+          height: 130px;
+          width: 130px;
+        }
       }
-    }
 
-    .currentCenter, .currentRight {
-      .weatherLabel {
-        font-size:16px;
-        line-height:18px;
+      .currentTemp, .currentCenter, .currentRight {
+        padding-top:20px;
+      }
+
+      .currentTemp {
+
+        .currTemp {
+          font-size:56px;
+          line-height:58px;
+          margin-bottom: 18px;
+        }
+      }
+
+      .currentCenter, .currentRight {
+        .weatherLabel {
+          font-size:16px;
+          line-height:18px;
+        }
       }
     }
   }
@@ -150,7 +188,15 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .currentWeather {
+  .currentTop {
+    padding: 10px 10px 10px 20px;
+
+    h3 {
+      text-align: left;
+      font-size:30px;
+    }
+  }
+  .currentBottom {
     grid-template-columns:20% 30% 1fr 1fr;
     grid-template-areas: "currIcon currTemp currCenter currRight";
 
