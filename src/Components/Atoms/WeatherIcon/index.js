@@ -20,7 +20,7 @@ import {
   WiRain
   } from "react-icons/wi";
 
-// Helper Functions
+// Helper Functions Imports
 import { IsNight } from '../../../Helpers/IsNight.js';
 
 function WeatherIco(props) {
@@ -60,8 +60,6 @@ function WeatherIco(props) {
     return <WiDayHaze />
   } else if (icon === "mist" && night === true) {
     return <WiNightFog />
-  } else {
-    console.log('fail')
   }
 }
 

@@ -8,6 +8,7 @@ function LabelTime(props) {
       <span>
         {props.label}:
         </span>
+
       <Moment
         format={props.format}
         unix

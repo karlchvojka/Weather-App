@@ -8,8 +8,8 @@ function LabelDate(props) {
     <h3 className="indDate">
       <Moment format="MMM D" unix>
         {props.dt}
-      </Moment>
-    </h3>
+        </Moment>
+      </h3>
   )
 }
 

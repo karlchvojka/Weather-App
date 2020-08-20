@@ -8,6 +8,7 @@ function LabelEle(props) {
       <span>
         {props.label}:
         </span>
+        
       {props.text}
       </p>
   )
