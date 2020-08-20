@@ -4,9 +4,9 @@ import './index.scss';
 import Moment from 'react-moment';
 
 // Component Imports
-import WeatherIco from '../../Atoms/WeatherIcon/';
-import LabelEle from '../../Atoms/Label/';
-import LabelTime from '../../Atoms/LabelTime/';
+import WeatherIco from 'Components/Atoms/WeatherIcon/';
+import LabelEle from 'Components/Atoms/Label/';
+import LabelTime from 'Components/Atoms/LabelTime/';
 
 // Helper Functions
 function CurrentWeather(props) {
@@ -76,7 +76,7 @@ function CurrentWeather(props) {
             label={'Wind Direction'}
             text={current.wind_deg}
             />
-            
+
           <LabelEle
             label={'Wind Speed'}
             text={current.wind_speed}

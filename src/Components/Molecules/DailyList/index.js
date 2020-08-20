@@ -3,8 +3,8 @@ import React from 'react';
 import './index.scss';
 
 // Component Imports
-import WeatherIco from '../../Atoms/WeatherIcon/';
-import LabelDate from '../../Atoms/LabelDate/';
+import WeatherIco from 'Components/Atoms/WeatherIcon/';
+import LabelDate from 'Components/Atoms/LabelDate/';
 
 function DailyList(props) {
   const week = props.days.daily.slice(0, 7);
@@ -27,7 +27,7 @@ function DailyList(props) {
         current={item.weather[0].description}
         place={'daily'}
         />
-        
+
       <p className="indTemp">
         High: {item.temp.max}&#176;C <br/>
         Low: {item.temp.min}&#176;C

@@ -1,15 +1,15 @@
 // Imports
 import React, { useState, useEffect } from 'react';
-import './App.scss';
-import './Styles/fonts.scss';
+import 'App.scss';
+import 'Styles/fonts.scss';
 
 // Component Imports
-import CurrentWeather from './Components/Organisms/currentWeather';
-import FutureWeather from './Components/Organisms/futureWeather/';
+import CurrentWeather from 'Components/Organisms/currentWeather';
+import FutureWeather from 'Components/Organisms/futureWeather/';
 
 // Helper Functions
-import { GetPosition } from './Helpers/GetPosition.js';
-import { FetchWeather } from './Helpers/FetchWeather.js';
+import { GetPosition } from 'Helpers/GetPosition.js';
+import { FetchWeather } from 'Helpers/FetchWeather.js';
 
 function App() {
   const [pos, setPos] = useState([]);
