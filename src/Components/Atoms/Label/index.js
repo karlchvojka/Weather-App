@@ -1,14 +1,14 @@
 // System required Imports
 import React from 'react';
-import './index.scss';
+import './styles.scss';
 
 function LabelEle(props) {
   return (
-    <p className="weatherLabel">
+    <p className="labelEle">
       <span>
         {props.label}:
         </span>
-        
+
       {props.text}
       </p>
   )

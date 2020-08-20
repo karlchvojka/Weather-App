@@ -1,6 +1,6 @@
 // System required Imports
 import React from 'react';
-import './index.scss';
+import './styles.scss';
 
 // Component Imports
 import DailyList from 'Components/Molecules/DailyList';

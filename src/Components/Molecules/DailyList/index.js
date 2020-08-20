@@ -1,6 +1,5 @@
 // System required Imports
 import React from 'react';
-import './index.scss';
 
 // Component Imports
 import WeatherIco from 'Components/Atoms/WeatherIcon/';

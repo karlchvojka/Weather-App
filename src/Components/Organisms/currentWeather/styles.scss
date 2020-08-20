@@ -1,5 +1,5 @@
-@import '../../../Styles/variables.scss';
-@import '../../../Styles/fonts.scss';
+@import 'Styles/variables.scss';
+@import 'Styles/fonts.scss';
 
 .currentWeather {
   border: 1px solid $cyberBlue;
@@ -26,6 +26,8 @@
       grid-area: currIcon;
 
       svg {
+        color: $cyberBlue;
+        display: block;
         height: 80px;
         width: auto;
         margin: 0 auto;
@@ -92,9 +94,7 @@
   // Extra small devices (portrait phones, less than 576px)
   // No media query since this is the default in Bootstrap
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
+// Small devices (landscape phones, 576px and up) uses the same as mobile.
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {

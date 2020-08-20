@@ -1,5 +1,5 @@
-@import '../../../Styles/variables.scss';
-@import '../../../Styles/fonts.scss';
+@import 'Styles/variables.scss';
+@import 'Styles/fonts.scss';
 
 .futureWeather {
   ul {
@@ -10,6 +10,7 @@
 
     li {
       display:grid;
+      border: 1px solid $cyberBlue;
       grid-template-columns: repeat(2, 48%);
       margin: 0px 1% 10px 1%;
       padding: 5px 10px 10px 10px;
@@ -19,6 +20,8 @@
       h3 {
         grid-area: indDate;
         margin-top:10px;
+        margin-bottom: 5px;
+        text-align:center;
       }
       .indDate {
         font-size:20px;
@@ -27,6 +30,7 @@
         margin-top:0px;
       }
       svg {
+        color: $cyberBlue;
         grid-area: indWeatherIco;
         height:60px;
         margin: 5px auto;
@@ -36,6 +40,10 @@
 
       p {
         grid-area: indTemp;
+        text-align:center;
+        color:$cyberBlue;
+        font-weight:700;
+        margin-bottom: 0px;
       }
 
       .indTemp {
@@ -47,12 +55,7 @@
   }
 }
 
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
+// Small devices (landscape phones, 576px and up) uses same as the mobile
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {

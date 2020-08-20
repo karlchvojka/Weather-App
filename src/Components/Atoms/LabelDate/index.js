@@ -1,7 +1,6 @@
 // System required Imports
 import React from 'react';
 import Moment from 'react-moment';
-import './index.scss';
 
 function LabelDate(props) {
   return (
