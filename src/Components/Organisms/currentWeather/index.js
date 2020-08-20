@@ -11,7 +11,7 @@ import LabelTime from '../../Atoms/LabelTime/';
 // Helper Functions
 function CurrentWeather(props) {
   const current = props.current;
-  console.log(current)
+
   return (
     Object.keys(current).length > 0 ?
     <div className="currentWeather">
@@ -22,56 +22,66 @@ function CurrentWeather(props) {
             </Moment>
           </h3>
       </div>
+
       <div className="currentBottom">
         <div className="currentIcon">
           <WeatherIco
             current={current.weather[current.weather.length-1].description}
             place={'current'}
             />
-        </div>
+          </div>
+
         <div className="currentTemp">
           <p className="currTemp">
             {current.temp.day} &#176;C
             </p>
+
           <LabelEle
             label={'Feels Like'}
             text={current.feels_like.day}
             />
+
           <p className="indTemp">
             <span className="dailyHigh">High:</span> {current.temp.max}&#176;C&nbsp;
             <span className="dailyLow">Low:</span> {current.temp.min}&#176;C
             </p>
-        </div>
+          </div>
+
         <div className="currentCenter">
           <LabelEle
             label={'Humidity'}
             text={current.humidity + '%'}
             />
+
           <LabelTime
             label={'Sunrise'}
             format={'hh:mm A'}
             text={current.sunrise}
             />
+
           <LabelTime
             label={'Sunset'}
             format={'hh:mm A'}
             text={current.sunset}
             />
-        </div>
+          </div>
+
         <div className="currentRight">
           <LabelEle
             label={'Pressure'}
             text={current.pressure}
             />
+
           <LabelEle
             label={'Wind Direction'}
             text={current.wind_deg}
             />
+            
           <LabelEle
             label={'Wind Speed'}
             text={current.wind_speed}
             />
-        </div>
+          </div>
       </div>
     </div>
     :

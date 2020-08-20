@@ -17,14 +17,17 @@ function DailyList(props) {
     <li id={key.toString()}
         key={key.toString()}
         onClick={dateSelect}>
+
       <LabelDate
         dt={item.dt}
         />
+
       <WeatherIco
         className="indWeatherIco"
         current={item.weather[0].description}
         place={'daily'}
         />
+        
       <p className="indTemp">
         High: {item.temp.max}&#176;C <br/>
         Low: {item.temp.min}&#176;C

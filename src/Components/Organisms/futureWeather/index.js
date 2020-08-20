@@ -17,10 +17,10 @@ function FutureWeather(props) {
           days={props.daily}
           selectedDate={props.selected}
           />
-      </ul>
+        </ul>
     </div>
     :
-    <h2>loading</h2>
+    <h2>Loading...</h2>
   )
 }
 
