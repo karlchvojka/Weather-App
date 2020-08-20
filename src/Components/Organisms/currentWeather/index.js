@@ -38,8 +38,8 @@ function CurrentWeather(props) {
             text={current.feels_like.day}
             />
           <p className="indTemp">
-            <span>High:</span> {current.temp.max}&#176;C&nbsp;
-            <span>Low:</span> {current.temp.min}&#176;C
+            <span className="dailyHigh">High:</span> {current.temp.max}&#176;C&nbsp;
+            <span className="dailyLow">Low:</span> {current.temp.min}&#176;C
             </p>
         </div>
         <div className="currentCenter">

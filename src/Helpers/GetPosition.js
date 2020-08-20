@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 // Using browser geolocation, gets users lat/long
 // Set position into state
 export const GetPosition = (setPos) => {

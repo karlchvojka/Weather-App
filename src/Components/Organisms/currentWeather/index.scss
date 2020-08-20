@@ -16,7 +16,7 @@
 
   .currentBottom {
     display:grid;
-    grid-template-columns:35% 30% 35%;
+    grid-template-columns:50% 25% 25%;
     padding:10px;
 
     grid-template-areas: "currIcon currCenter currRight"
@@ -88,16 +88,17 @@
       grid-area:currRight;
     }
   }
-
+}
   // Extra small devices (portrait phones, less than 576px)
   // No media query since this is the default in Bootstrap
 
-  // Small devices (landscape phones, 576px and up)
-  @media (min-width: 576px) {
-  }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
 
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .currentWeather {
     .currentTop {
       padding: 10px 10px 10px 20px;
 
@@ -108,7 +109,7 @@
     }
 
     .currentBottom {
-      grid-template-columns:35% 30% 35%;
+      grid-template-columns:50% 25% 25%;
       grid-template-areas: "currIcon currCenter currRight"
                            "currTemp currCenter currRight";
 
@@ -130,6 +131,12 @@
           line-height:42px;
           margin-bottom: 18px;
         }
+
+        .indTemp {
+          .dailyLow {
+            margin-left:15px;
+          }
+        }
       }
 
       .currentCenter, .currentRight {
@@ -140,9 +147,11 @@
       }
     }
   }
+}
 
   // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {
+@media (min-width: 992px) {
+  .currentWeather {
     .currentTop {
       padding: 10px 10px 10px 20px;
 
@@ -153,7 +162,7 @@
     }
 
     .currentBottom {
-      grid-template-columns:20% 30% 1fr 1fr;
+      grid-template-columns:20% 40% 20% 20%;
       grid-template-areas: "currIcon currTemp currCenter currRight";
 
       .currentIcon {
@@ -174,6 +183,12 @@
           line-height:58px;
           margin-bottom: 18px;
         }
+
+        .indTemp {
+          .dailyLow {
+            margin-left:15px;
+          }
+        }
       }
 
       .currentCenter, .currentRight {
@@ -188,42 +203,51 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .currentTop {
-    padding: 10px 10px 10px 20px;
+  .currentWeather {
+    .currentTop {
+      padding: 10px 10px 10px 20px;
 
-    h3 {
-      text-align: left;
-      font-size:30px;
+      h3 {
+        text-align: left;
+        font-size:30px;
+      }
     }
-  }
-  .currentBottom {
-    grid-template-columns:20% 30% 1fr 1fr;
+
+    .currentBottom {
+    grid-template-columns:20% 40% 20% 20%;
     grid-template-areas: "currIcon currTemp currCenter currRight";
 
-    .currentIcon {
-      svg {
-        height: 130px;
-        width: 130px;
+      .currentIcon {
+        svg {
+          height: 130px;
+          width: 130px;
+        }
       }
-    }
 
-    .currentTemp, .currentCenter, .currentRight {
-      padding-top:20px;
-    }
-
-    .currentTemp {
-
-      .currTemp {
-        font-size:56px;
-        line-height:58px;
-        margin-bottom: 18px;
+      .currentTemp, .currentCenter, .currentRight {
+        padding-top:20px;
       }
-    }
 
-    .currentCenter, .currentRight {
-      .weatherLabel {
-        font-size:18px;
-        line-height:20px;
+      .currentTemp {
+
+        .currTemp {
+          font-size:56px;
+          line-height:58px;
+          margin-bottom: 18px;
+        }
+
+        .indTemp {
+          .dailyLow {
+          margin-left:20px;
+          }
+        }
+      }
+
+      .currentCenter, .currentRight {
+        .weatherLabel {
+          font-size:18px;
+          line-height:20px;
+        }
       }
     }
   }

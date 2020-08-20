@@ -7,7 +7,7 @@ export const FetchWeather = async (setWeather, setToday, selectedDate, pos) => {
   );
 
   // Set Weather info into state, set selected date.
-  console.log(result)
+  console.log('res', result)
   setWeather(result.data);
   setToday(result.data.daily[selectedDate])
 };
