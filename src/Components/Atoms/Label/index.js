@@ -6,7 +6,7 @@ function LabelEle(props) {
   return (
     <p className="labelEle">
       <span>
-        {props.label}:
+        {props.label}:&nbsp;
         </span>
 
       {props.text}

@@ -7,7 +7,7 @@ function LabelTime(props) {
   return (
     <p className="timeLabel">
       <span>
-        {props.label}:
+        {props.label}:&nbsp;
         </span>
 
       <Moment
