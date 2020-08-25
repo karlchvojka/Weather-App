@@ -1,9 +1,9 @@
 // System required Imports
 import React from 'react';
-import './index.scss';
+import './styles.scss';
 
 // Component Imports
-import DailyList from '../../Molecules/DailyList';
+import DailyList from 'Components/Molecules/DailyList';
 
 // Helper Functions
 
@@ -17,10 +17,10 @@ function FutureWeather(props) {
           days={props.daily}
           selectedDate={props.selected}
           />
-      </ul>
+        </ul>
     </div>
     :
-    <h2>loading</h2>
+    <h2>Loading...</h2>
   )
 }
 

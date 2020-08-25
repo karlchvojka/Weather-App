@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.scss';
 
 // Component required Imports
 import {
@@ -20,8 +19,8 @@ import {
   WiRain
   } from "react-icons/wi";
 
-// Helper Functions
-import { IsNight } from '../../../Helpers/IsNight.js';
+// Helper Functions Imports
+import { IsNight } from 'Helpers/IsNight.js';
 
 function WeatherIco(props) {
   let night = IsNight();
@@ -60,8 +59,6 @@ function WeatherIco(props) {
     return <WiDayHaze />
   } else if (icon === "mist" && night === true) {
     return <WiNightFog />
-  } else {
-    console.log('fail')
   }
 }
 

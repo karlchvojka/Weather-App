@@ -1,13 +1,15 @@
 // System required Imports
 import React from 'react';
 import Moment from 'react-moment';
+import './styles.scss';
 
 function LabelTime(props) {
   return (
-    <p className="weatherLabel">
+    <p className="timeLabel">
       <span>
-        {props.label}:
+        {props.label}:&nbsp;
         </span>
+
       <Moment
         format={props.format}
         unix

@@ -1,8 +1,9 @@
-@import '../../../Styles/variables.scss';
-@import '../../../Styles/fonts.scss';
+@import 'Styles/variables.scss';
+@import 'Styles/fonts.scss';
 
-.weatherLabel {
+.timeLabel {
   font-size:16px;
+  line-height: 18px;
 
   span {
     color:$cyberBlue;
