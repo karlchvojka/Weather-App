@@ -6,6 +6,7 @@ export const GetPosition = (setPos) => {
       success.coords.latitude,
       success.coords.longitude
     ];
+    console.log(pos)
     setPos(pos)
   }, failure => {
     if (failure.message.startsWith("Only secure origins are allowed")) {
