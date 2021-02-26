@@ -55,11 +55,18 @@ function WeatherIco(props) {
     return <WiDaySnow />
   } else if (icon === "snow" && night === true) {
     return <WiNightSnow />
+  } else if (icon === "light snow" && night === false) {
+    return <WiDaySnow />
+  } else if (icon === "light snow" && night === true) {
+    return <WiNightSnow />
   } else if (icon === "mist" && night === false) {
     return <WiDayHaze />
   } else if (icon === "mist" && night === true) {
     return <WiNightFog />
   }
+
+  return null;
+
 }
 
 export default WeatherIco;
