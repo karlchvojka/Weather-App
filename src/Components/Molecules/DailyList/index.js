@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Component Imports
-import WeatherIco from 'Components/Atoms/WeatherIcon/';
-import LabelDate from 'Components/Atoms/LabelDate/';
+import WeatherIco from '../../Atoms/WeatherIcon/';
+import LabelDate from '../../Atoms/LabelDate/';
 
 function DailyList(props) {
   const week = props.days.daily.slice(0, 7);

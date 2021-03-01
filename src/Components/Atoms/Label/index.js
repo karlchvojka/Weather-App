@@ -1,6 +1,7 @@
 // System required Imports
 import React from 'react';
-import './styles.scss';
+
+import StyledLabel from './StyledLabel.js';
 
 function LabelEle(props) {
   return (

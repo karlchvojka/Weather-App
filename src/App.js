@@ -1,15 +1,15 @@
 // Imports
 import React, { useState, useEffect } from 'react';
-import 'App.scss';
-import 'Styles/fonts.scss';
+import { styled, createGlobalStyle } from 'styled-components';
+import { GlobalStyle } from './GlobalStyles.js';
 
 // Component Imports
-import CurrentWeather from 'Components/Organisms/currentWeather';
-import FutureWeather from 'Components/Organisms/futureWeather/';
+import CurrentWeather from './Components/Organisms/currentWeather';
+import FutureWeather from './Components/Organisms/futureWeather/';
 
 // Helper Functions
-import { GetPosition } from 'Helpers/GetPosition.js';
-import { FetchWeather } from 'Helpers/FetchWeather.js';
+import { GetPosition } from './Helpers/GetPosition.js';
+import { FetchWeather } from './Helpers/FetchWeather.js';
 
 function App() {
   const [pos, setPos] = useState([]);
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     GetPosition(setPos);
     }, []);
-
+    console.log("stuff")
   // useEffect gets the weather data for the location
   useEffect(() => {
     pos.length && FetchWeather(setWeather, selectedDate, pos);
@@ -28,6 +28,8 @@ function App() {
 
   return (
     Object.keys(weather).length > 0 ?
+    <>
+    <GlobalStyle />
     <div className="App">
       <header>
         <h1>Weather App</h1>
@@ -45,6 +47,7 @@ function App() {
           </div>
         </main>
       </div>
+      </>
     :
       <div className="loadingWrap">
         <h2>Loading...</h2>

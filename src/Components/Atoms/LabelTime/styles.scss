@@ -1,12 +1,9 @@
-@import 'Styles/variables.scss';
-@import 'Styles/fonts.scss';
 
 .timeLabel {
   font-size:16px;
   line-height: 18px;
 
   span {
-    color:$cyberBlue;
     font-weight: 700;
     text-transform: uppercase;
   }

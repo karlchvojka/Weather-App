@@ -20,7 +20,7 @@ import {
   } from "react-icons/wi";
 
 // Helper Functions Imports
-import { IsNight } from 'Helpers/IsNight.js';
+import { IsNight } from '../../../Helpers/IsNight.js';
 
 function WeatherIco(props) {
   let night = IsNight();

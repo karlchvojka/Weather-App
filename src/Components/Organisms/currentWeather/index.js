@@ -4,9 +4,9 @@ import './styles.scss';
 import Moment from 'react-moment';
 
 // Component Imports
-import WeatherIco from 'Components/Atoms/WeatherIcon/';
-import LabelEle from 'Components/Atoms/Label/';
-import LabelTime from 'Components/Atoms/LabelTime/';
+import WeatherIco from '../../Atoms/WeatherIcon/';
+import LabelEle from '../../Atoms/Label/';
+import LabelTime from '../../Atoms/LabelTime/';
 
 // Helper Functions
 function CurrentWeather(props) {
