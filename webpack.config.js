@@ -49,7 +49,7 @@ module.exports = {
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
     }),
     new webpack.DefinePlugin({
-         'process.env.REACT_APP_API_KEY': JSON.stringify('5cdf5d38bd1dc3c17a4f537d26d97115')
+         'process.env.REACT_APP_API_KEY': JSON.stringify('')
      })
   ]
 };
