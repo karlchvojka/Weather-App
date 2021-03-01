@@ -3,7 +3,7 @@ import React from 'react';
 import './styles.scss';
 
 // Component Imports
-import DailyList from 'Components/Molecules/DailyList';
+import DailyList from '../../Molecules/DailyList';
 
 // Helper Functions
 
