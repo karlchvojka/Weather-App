@@ -32,7 +32,7 @@ function App() {
     <GlobalStyle />
     <div className="App">
       <header>
-        <h1>Weather App</h1>
+        <h1></h1>
         </header>
       <main>
         <div className="weatherAppWrap">
